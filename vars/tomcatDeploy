@@ -1,0 +1,10 @@
+def call(credId,tomcatIp,tomcatUser){             
+             sshagent([credId]) {
+                  sh """
+                  scp -o StrictHostKeyChecking=no target/myweb-0.0.6.war ${tomcatUser}@${tomcatIp}:/opt/apache-tomcat-8.5.35/webapps/myweb-0.0.6.war
+                  ssh ${tomcatUser}@${tomcatIp} /opt/apache-tomcat-8.5.35/bin/shutdown.sh
+                  ssh ${tomcatUser}@${tomcatIp} /opt/apache-tomcat-8.5.35/bin/startup.sh
+                  """
+                  
+                  }
+       }
