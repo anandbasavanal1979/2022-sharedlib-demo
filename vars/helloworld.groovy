@@ -1,4 +1,4 @@
-def call(name,location){
+def call(name){
   echo "hello ${name} How are you boss?"
-  echo "location from ${location}" 
+  
 }
