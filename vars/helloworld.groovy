@@ -1,3 +1,3 @@
-def call(name,DOB){
-  echo "hello ${name},${DOB} How are you boss?"
+def call(name,location){
+  echo "hello ${name},${location} How are you boss?"
 }
